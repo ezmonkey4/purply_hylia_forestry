@@ -39,6 +39,8 @@ module.exports = function(config) {
 
   // Custom collections
   const livePosts = post => post.date <= now && !post.data.draft;
+  //const bestPost = post => post.data.tags.indexOf('best') >= 0 ;
+  const bestPost = post => post.data.best;
   config.addCollection('posts', collection => {
     return [
       ...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)
@@ -50,6 +52,13 @@ module.exports = function(config) {
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });
+
+  config.addCollection('bestOf', collection => {
+    return [...collection.getFilteredByGlob('./src/posts/*.md').filter(bestPost)]
+      //.reverse()
+      .slice(0, site.maxPostsPerPage);
+  });
+
 
   // Plugins
   config.addPlugin(rssPlugin);

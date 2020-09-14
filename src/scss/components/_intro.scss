@@ -4,6 +4,7 @@
   &__summary {
     --flow-space: #{get-size(500)};
     font-size: get-size(500);
+    text-align: center;
 
     a {
       color: currentColor;
@@ -16,6 +17,7 @@
 
   &__heading {
     max-width: 40ex;
+    text-align: center;
     color: var(--color-theme-feature-text);
 
     &--compact {

@@ -1,0 +1,27 @@
+
+{% block head %}
+  <style>
+    .bestof {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+      grid-gap: 2.5rem 2rem;
+      margin-left: 0;
+    }
+  </style>
+{% endblock %}
+
+
+<section class="[ post-list ] [ pad-top-700 gap-bottom-900 ]">
+  <div class="[ wrapper ] [ sf-flow ]">
+    <ol class="bestof">
+{% for post in bestPosts %}
+      <li>
+          <a href={{ post.url }} class="post-list__link">
+              <img src="{{ post.data.image }}" alt=" {{ post.data.image_alt }}" />
+              <h4>{{ post.data.title }}</h4>
+          </a>
+      </li>
+{% endfor %}
+    </ol>
+  </div>
+</section>
