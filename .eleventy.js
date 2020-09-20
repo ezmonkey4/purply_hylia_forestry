@@ -41,6 +41,7 @@ module.exports = function(config) {
   const livePosts = post => post.date <= now && !post.data.draft;
   //const bestPost = post => post.data.tags.indexOf('best') >= 0 ;
   const bestPost = post => post.data.best;
+  const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
   config.addCollection('posts', collection => {
     return [
       ...collection.getFilteredByGlob('./src/posts/*.md').filter(livePosts)
@@ -59,11 +60,125 @@ module.exports = function(config) {
       .slice(0, site.maxPostsPerPage);
   });
 
+  config.addLiquidShortcode("sliderTop", function () {
+    var many = `<div class="slideshow-container"
+      style="max-width:1000px;position:relative;margin:auto;">`
+      return many
+  });
+
+  config.addLiquidShortcode("sliderMiddle", function () {
+    var many = ``
+      many +=`<div style="display:none;" class="` 
+      many += arguments[0] 
+      many +=`"> <p style="text-align:center"> <a href="`
+      many += arguments[2] 
+      many +=`" 
+        rel='sponsored' target="_blank"><img src="`
+      many += arguments[1] 
+      many += `"  
+        style="vertical-align: middle; display: block; margin-left: auto; margin-right: auto;"
+        alt="`
+      many += arguments[3]
+      many += `"
+      />
+      </a>
+      </p>
+        </div>`
+    return many
+  });
+  config.addLiquidShortcode("sliderBottom", function () {
+    var many = ``
+    many +=`<a class="prev" onclick="plusSlides(-1, '`
+    many += parseInt(arguments[0]) -1
+    many += `')"
+        style="
+  background-color: #f1f1f1;
+  color:black;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+        " 
+        >&#10094;</a>
+        <a class="next" onclick="plusSlides(1, '`
+        many += parseInt(arguments[0]) -1 
+        many += `')"
+        style="
+  background-color: #f1f1f1;
+  color:black;
+          right: 0; border-radius: 3px 0 0 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+        "
+        >&#10095;</a>
+      </div>
+      `
+      return many
+  });
+  config.addLiquidShortcode("sliderJs", function () {
+    var many = ``
+    many +=`<script>
+      var slideIndex = [1,1,1,1,1,1,1,1,1,1];
+      var slideClass = ["mySlides1","mySlides2","mySlides3","mySlides4","mySlides5",
+      "mySlides6","mySlides7","mySlides8","mySlides9"]
+      showSlides(1, 0);
+      showSlides(1, 1);
+      showSlides(1, 2);
+      showSlides(1, 3);
+      showSlides(1, 4);
+      showSlides(1, 5);
+      showSlides(1, 6);
+      showSlides(1, 7);
+      showSlides(1, 8);
+      showSlides(1, 9);
+      showSlides(1, 10);
+      function plusSlides(n, no) {
+        var x = document.getElementsByClassName(slideClass[no]);
+        if (slideIndex[no] + n > x.length) { n= 0}    
+        if (slideIndex[no] + n < 1) {n=0}
+        showSlides(slideIndex[no] += n, no);
+      }
+      function showSlides(n, no) {
+        var i;
+        var x = document.getElementsByClassName(slideClass[no]);
+        //if (n > x.length) {slideIndex[no] = 1}    
+        //if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex[no]-1].style.display = "block";  
+      }
+      </script> `
+    console.log(many)
+    return many
+
+  });
+
 
   // Plugins
   config.addPlugin(rssPlugin);
   config.addPlugin(syntaxHighlight);
-
+  module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(lazyImagesPlugin);
+  };
   // 404 
   config.setBrowserSyncConfig({
     callbacks: {
@@ -86,4 +201,7 @@ module.exports = function(config) {
     },
     passthroughFileCopy: true
   };
+
+
+  
 };

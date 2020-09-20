@@ -1,8 +1,8 @@
 ---
 layout: home
-title: Yup! That tasted purple!
+title: All you need to know about pacifiers.
 postsHeading: Latest posts
 archiveButtonText: See all posts
 socialImage: ''
 ---
-All you need to know about pacifiers.
+Yup! That tasted purple!

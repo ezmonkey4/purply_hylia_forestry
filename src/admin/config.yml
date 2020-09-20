@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-site_url: "https://example.com"
+site_url: "https://purplypacifier.com"
 media_folder: "src/images"
 public_folder: "images"
 collections:
@@ -113,6 +113,10 @@ collections:
               - {label: "Mid", name: "mid", widget: "string", default: "hsl(0, 0%, 80%)"}
               - {label: "Dark", name: "dark", widget: "string", default: "hsl(0, 0%, 20%)"}
               - {label: "Slate", name: "slate", widget: "string", default: "hsl(0, 0%, 25%)"}
+              - {label: "Amazon Green Light", name: "amazon-green-light", widget: "string", default: "hsl(145, 61%, 69%)"}
+              - {label: "Amazon Green Dark", name: "amazon-green-dark", widget: "string", default: "hsl(145, 63%, 43%)"}
+              - {label: "Amazon Pink Light", name: "amazon-pink-light", widget: "string", default: "hsl(6, 78%, 83%)"}
+              - {label: "Amazon Pink Dark", name: "amazon-pink-dark", widget: "string", default: "hsl(6, 59%, 50%)"}
           - label: "Fonts"
             name: "fonts"
             widget: "hidden"

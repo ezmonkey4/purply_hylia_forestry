@@ -10,6 +10,16 @@
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
+
+  &__green {
+    color: var(--color-action-text);
+    background-color: var(--color-amazon-button);
+  };
+
+  &__pink {
+    color: var(--color-action-text);
+    background-color: var(--color-amazon-button-alt);
+  };
 }
 
 .button:hover,
