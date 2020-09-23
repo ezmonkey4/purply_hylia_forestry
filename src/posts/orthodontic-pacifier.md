@@ -6,6 +6,7 @@ tags:
 best: true
 image: /images/pacifier_tree_med.jpg
 image_alt: orthodontic pacifier hanging on a tree
+metaDes: "Orthodontic Pacifiers are somewhat better after age 2. You don't need an orthodontic pacifier before age 2. Here is why!"
 ---
 
 ![{{image_alt}}]({{ image }})
