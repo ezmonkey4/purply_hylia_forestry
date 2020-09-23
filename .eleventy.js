@@ -60,6 +60,36 @@ module.exports = function(config) {
       .slice(0, site.maxPostsPerPage);
   });
 
+  config.addLiquidShortcode("ahref", function () {
+    var many = `<a href="`
+    many += arguments[1]
+    many += `" target="`
+    many += arguments[2] 
+    many += `" rel="`
+    many += arguments[3] 
+    many += `">`
+    many += arguments[0] 
+    many += `</a>`
+    return many
+  });
+
+
+
+  config.addLiquidShortcode("img", function () {
+    var many = `<a href="`
+    many += arguments[1]
+    many += `" target="`
+    many += arguments[2] 
+    many += `" rel="`
+    many += arguments[3] 
+    many += `">`
+    many += arguments[0] 
+    many += `</a>`
+    return many
+  });
+
+
+
   config.addLiquidShortcode("sliderTop", function () {
     var many = `<div class="slideshow-container"
       style="max-width:1000px;position:relative;margin:auto;">`
@@ -80,7 +110,9 @@ module.exports = function(config) {
         alt="`
       many += arguments[3]
       many += `"
-      />
+      /><figcaption>`
+      many += arguments[3]
+      many += `</figcaption>
       </a>
       </p>
         </div>`
