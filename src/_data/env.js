@@ -23,4 +23,7 @@ module.exports = {
     site: baseUrl,
     img: `${baseUrl}${dir.img}`,
   },
+  tracking: {
+      gtag: 'UA-154998908-3',
+  },
 };
