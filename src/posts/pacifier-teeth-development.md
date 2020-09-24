@@ -4,6 +4,7 @@ date: '2019-06-18'
 tags:
   - top-sellers
 best: true
+socialImage: /images/dinosaur-3971241_1280.jpg
 image: /images/dinosaur-3971241_1280.jpg
 image_alt: pacifier and shoes spelling 2020
 metaDesc: "Here's how to discourage pacifier usage after age 3. Children up to age 3 can safely use a pacifier without causing future orthodontic teeth problems."

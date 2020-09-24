@@ -30,10 +30,19 @@
 {% endif %}
 
 {% if socialImage %}  
-  <meta property="og:image" content="{{ socialImage }}" />
-  <meta name="twitter:image" content="{{ socialImage }}" />
+  <meta property="og:image" content="{{ env.base.site + socialImage }}" />
+  <meta name="twitter:image" content="{{ env.base.site + socialImage }}" />
   <meta property="og:image:alt" content="Page image for {{ site.name }}" />
   <meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+
+  {# comment 
+  added these sizes according to https://jec.fyi/blog/setting-up-seo-and-google-analytics
+  also
+  <meta name="twitter:card" content="summary_large_image">
+  #}
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
 {% endif %}
 
 {% if site.paymentPointer %}

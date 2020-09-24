@@ -4,6 +4,7 @@ date: '2020-06-18'
 tags:
   - top-sellers
 best: true
+socialImage: /images/2020_med.jpg
 image: /images/2020_med.jpg
 image_alt: pacifier and shoes spelling 2020
 metaDesc: "Here are the best pacifiers to fit different babies. Every child is different and has its own needs, we will try to find the best one for your newborn baby"
