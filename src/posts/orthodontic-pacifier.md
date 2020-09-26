@@ -4,8 +4,9 @@ date: '2019-06-18'
 tags:
   - info
 best: true
-socialImage: /images/pacifier_tree_med.jpg
-image: /images/pacifier_tree_med.jpg
+socialImage: /images/pacifier_tree_med.webp
+image: /images/pacifier_tree_med.webp
+image_small: /images/pacifier_tree_small.webp
 image_alt: orthodontic pacifier hanging on a tree
 metaDes: "Orthodontic Pacifiers are somewhat better after age 2. You don't need an orthodontic pacifier before age 2. Here is why!"
 ---

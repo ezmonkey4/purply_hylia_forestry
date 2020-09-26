@@ -22,7 +22,7 @@
 {% for post in bestPosts %}
       <li>
           <a href={{ post.url }} class="post-list__link">
-              <img src="{{ post.data.image }}" alt=" {{ post.data.image_alt }}" />
+              <img src="{{ post.data.image_small }}" alt=" {{ post.data.image_alt }}" />
               <h4>{{ post.data.title }}</h4>
           </a>
       </li>
