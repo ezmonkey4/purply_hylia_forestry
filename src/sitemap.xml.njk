@@ -5,10 +5,13 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all %}
+  {% set regExp = r/admin|archive|styleguide|service-worker/g %}
+  {% if not regExp.test(page.url) and not page.data.draft == true %}
   {% set absoluteUrl %}{{ env.base.site + page.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <url>
     <loc>{{ absoluteUrl }}</loc>
     <lastmod>{{ page.date.toISOString() }}</lastmod>
   </url>
+  {% endif %}
 {%- endfor %}
 </urlset>

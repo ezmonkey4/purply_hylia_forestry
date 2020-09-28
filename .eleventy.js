@@ -56,7 +56,7 @@ module.exports = function(config) {
 
   config.addCollection('bestOf', collection => {
     return [...collection.getFilteredByGlob('./src/posts/*.md').filter(bestPost)]
-      //.reverse()
+      .reverse()
       .slice(0, site.maxPostsPerPage);
   });
 
