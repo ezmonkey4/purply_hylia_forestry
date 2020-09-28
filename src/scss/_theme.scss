@@ -54,6 +54,12 @@ header {
   min-height: 170;
 }
 
+div.container66 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
 ::selection {
   color: var(--color-selection-text);
   background-color: var(--color-selection-bg);

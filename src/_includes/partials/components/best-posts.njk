@@ -4,13 +4,15 @@
     .bestof {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(24.5rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(20.5rem, 1fr));
       grid-gap: 2.5rem 2rem;
       margin-left: 0;
     }
 
-    h4 {
+    p {
       font-size: 1.5rem;
       text-align: center;
+      font-weight: bold;
     }
   </style>
 {% endblock %}
@@ -23,8 +25,8 @@
       <li>
           <a href={{ post.url }} class="post-list__link">
           <div>
-              <img width="500" height="333" style="aspect-ratio:0.666%" src="{{ post.data.image_small }}" alt=" {{ post.data.image_alt }}" style/>
-              <h4>{{ post.data.title }}</h4>
+              <img width="500" height="auto" style="" src="{{ post.data.image_small }}" alt=" {{ post.data.image_alt }}" style/>
+              <p>{{ post.data.title }}</p>
           </a>
       </li>
 {% endfor %}

@@ -1,0 +1,8 @@
+. best of images are to the side
+. add a home button at the footer
+. add slidershow to show how many images
+
+
+
+...
+n. amazon api for links
