@@ -104,7 +104,7 @@ module.exports = function(config) {
       many += arguments[2] 
       many +=`" 
         rel='sponsored' target="_blank">
-        <img src="`
+        <img width="340" height="340" src="`
       many += arguments[1] 
       many += `"  
         style="vertical-align: middle; display: block; margin-left: auto; margin-right: auto;"

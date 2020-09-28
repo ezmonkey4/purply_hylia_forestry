@@ -22,7 +22,8 @@
 {% for post in bestPosts %}
       <li>
           <a href={{ post.url }} class="post-list__link">
-              <img style="aspect-ratio:0.668;width:500;height:334" src="{{ post.data.image_small }}" alt=" {{ post.data.image_alt }}" style/>
+          <div>
+              <img width="500" height="333" style="aspect-ratio:0.666%" src="{{ post.data.image_small }}" alt=" {{ post.data.image_alt }}" style/>
               <h4>{{ post.data.title }}</h4>
           </a>
       </li>
