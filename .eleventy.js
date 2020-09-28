@@ -103,14 +103,16 @@ module.exports = function(config) {
       many +=`"> <p style="text-align:center"> <a href="`
       many += arguments[2] 
       many +=`" 
-        rel='sponsored' target="_blank"><img src="`
+        rel='sponsored' target="_blank">
+        <img src="`
       many += arguments[1] 
       many += `"  
         style="vertical-align: middle; display: block; margin-left: auto; margin-right: auto;"
         alt="`
       many += arguments[3]
       many += `"
-      /><figcaption>`
+      />
+      <figcaption>`
       many += arguments[3]
       many += `</figcaption>
       </a>
