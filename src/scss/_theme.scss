@@ -48,6 +48,10 @@ body {
 
 main {
   overflow: hidden;
+  min-height: 800px;
+}
+header {
+  min-height: 170;
 }
 
 ::selection {
